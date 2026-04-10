@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Numi</title>
+
+  <!-- App Meta -->
+  <meta name="theme-color" content="#2F6FED" />
+  <meta name="description" content="Numi — a fast, native-feel floating calculator" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="calculator" class="calc dark">
+
+  <!-- Drag Handle -->
+  <div id="dragHandle" class="drag-handle"></div>
+
+  <!-- Minimal Brand (subtle, not breaking UI) -->
+  <div class="brand">Numi</div>
+
+  <!-- Mode Switch -->
+  <div class="segmented">
+    <button class="active" data-mode="keypad">Keypad</button>
+    <button data-mode="tables">Tables</button>
+  </div>
+
+  <!-- Display -->
+  <div id="display">0</div>
+
+  <!-- History -->
+  <div id="history"></div>
+
+  <!-- Keypad -->
+  <div id="keypad" class="grid"></div>
+
+  <!-- Tables -->
+  <div id="tables" class="hidden"></div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button id="voice">🎤</button>
+    <button id="theme">🌙</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

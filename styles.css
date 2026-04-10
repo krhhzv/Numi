@@ -1,0 +1,155 @@
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --panel: #ffffff;
+  --key: #f5f5f5;
+  --op: #eaf3ff;
+  --accent: #2f6fed;
+}
+
+.dark {
+  --bg: #1e1e1e;
+  --text: #fff;
+  --panel: #1e1e1e;
+  --key: #2a2a2a;
+  --op: #2d3a4a;
+  --accent: #4c8dff;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: var(--bg);
+  overscroll-behavior: none;
+}
+
+/* MOBILE FIRST */
+.calc {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 75vh;
+
+  padding: 12px;
+  border-radius: 16px 16px 0 0;
+
+  background: var(--panel);
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+
+  touch-action: none;
+}
+
+/* DRAG HANDLE */
+.drag-handle {
+  width: 40px;
+  height: 4px;
+  background: #888;
+  border-radius: 2px;
+  margin: 6px auto 6px;
+}
+
+/* BRAND */
+.brand {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* SEGMENT */
+.segmented {
+  display: flex;
+  background: #ddd;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 8px;
+}
+.segmented button {
+  flex: 1;
+  height: 32px;
+  background: transparent;
+  border: none;
+}
+.segmented .active {
+  background: white;
+}
+
+/* DISPLAY */
+#display {
+  height: 56px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 22px;
+  color: var(--text);
+  transition: font-size 0.15s ease;
+}
+
+/* HISTORY */
+#history {
+  max-height: 100px;
+  overflow: auto;
+  font-size: 12px;
+}
+
+/* KEYPAD */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+button {
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+button:active {
+  transform: scale(0.96);
+  filter: brightness(0.98);
+}
+
+/* TYPES */
+.num { background: var(--key); color: var(--text); }
+.op { background: var(--op); color: var(--accent); }
+.eq { background: var(--accent); color: white; }
+.act { background: #ccc; }
+
+/* TABLES */
+.hidden { display: none; }
+
+#tables div {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .calc {
+    width: 300px;
+    height: auto;
+    right: 16px;
+    left: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    border-radius: 16px;
+  }
+}
